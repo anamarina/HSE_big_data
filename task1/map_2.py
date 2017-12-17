@@ -2,7 +2,7 @@ import sys
 # from __future__ import print_function
 
 if __name__ == '__main__':
-#     with open('output1.txt') as borders:
+#     with open('output.txt') as borders:
 #         min_prodTime = float(next(borders))
 #         max_prodTime = float(next(borders))
     min_prodTime = 20011992.7097
