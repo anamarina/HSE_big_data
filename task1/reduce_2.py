@@ -1,24 +1,30 @@
+#!/usr/bin/env python
+# coding=utf-8
+
 import sys
 
-if __name__ == '__main__':
-    i = next(sys.stdin)
-    line = i.split('\t')
-    antiNucleus = int(line[0])
-    eventFile = int(line[1])
-    count_distinct = 1
-    for i in sys.stdin:
-        line = i.split('\t')
-        new_antiNucleus = int(line[0])
-        new_eventFile = int(line[1])
-        if new_antiNucleus == antiNucleus:
-            if new_eventFile == eventFile:
-                pass
-            else:
-                eventFile = new_eventFile
-                count_distinct += 1
-        else:
-            print(str(antiNucleus) + ' ' + str(count_distinct))
-            antiNucleus = new_antiNucleus
-            count_distinct = 1
+current_key = -1
+num_pt = 0
+sum_pt = 0
+event = set()
 
-    print(str(antiNucleus) + ' ' + str(count_distinct))
+for line in sys.stdin:
+    columns = line.split("\t")
+    key = int(columns[0]) #antiNucleas
+    value = columns[1].split(",") #eventFile, prodTime, pt, dict
+    if(current_key == -1 or key == current_key):
+        current_key = key
+        if float(value[1]) >= float(value[3]):
+            sum_pt += float(value[2])
+            num_pt += 1
+            event.add(value[0])
+    else:
+        print(str(current_key)+"\t"+str(len(event))+","+str(sum_pt/num_pt))
+        if float(value[1])>=float(value[3]):
+            sum_pt = float(value[2])
+            num_pt = 1
+            event.clear()
+            event.add(value[0])
+        current_key = key
+
+print(str(current_key) + "\t" + str(len(event)) + "," + str(sum_pt/num_pt))
