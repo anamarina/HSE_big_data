@@ -3,9 +3,6 @@ import sys
 file = open('output1.txt', 'r')
 dict_val = dict()
 
-#lines = file.splitlines() #split file into lines without newlines
-#file_rejoined = ''.join(lines)
-
 for line in file:
     line = line.rstrip('\n') #remove the trailing newline
     value = line.split("\t")
