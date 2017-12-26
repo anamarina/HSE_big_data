@@ -1,5 +1,5 @@
-# Commands for running map-reduce jobs 
-# Docker hadoop-streming 
+## Docker hadoop-streming 
+### Run commands for Map-Reduce jobs
 
 ## 1. Run docker:
 ```
