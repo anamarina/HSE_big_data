@@ -1,4 +1,4 @@
-## Docker hadoop-streming 
+### Docker hadoop-streming 
 ### Run commands for Map-Reduce jobs
 
 ## Task 1: Hadoop Streaming
@@ -10,7 +10,7 @@
     2. Среднее значение Pt 
 ```
     
-<b>Fields:</b>
+<b>Variables:</b>
 <pre>
 0. antiNucleus INT
 1. eventFile UINT
