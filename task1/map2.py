@@ -1,3 +1,5 @@
+# bash: cat star2002-sample.csv | python map2.py |sort | python reduce2.py > output2.txt
+
 import sys
 
 file = open('output1.txt', 'r')
