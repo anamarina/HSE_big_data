@@ -1,5 +1,5 @@
 # Commands for running map-reduce jobs 
-# (via docker hadoop-streming) 
+# Docker hadoop-streming 
 
 ## 1. Run docker:
 ```
@@ -22,21 +22,21 @@ bin/hdfs dfs -put /star2002-sample.csv ./task1/
  
 ## 4. Run Hadoop-streaming:
 ```
-hadoop jar hadoop-streaming.jar
+hadoop jar hadoop-streaming.jar \
 
-mapper map1.py 
-reducer reduce1.py 
-input task1 
-output output1 
+- mapper map1.py 
+- reducer reduce1.py 
+- input task1 
+- output output1 
 [> file map1.py 
 file reduce1.py ]
 
 hadoop jar hadoop-streaming.jar \
-\
-mapper map2.py \
-reducer reduce2.py \
-input task1 \
-output output1 \
+
+- mapper map2.py \
+- reducer reduce2.py \
+- input task1 \
+- output output1 \
 [> file map2.py \
 file reduce2.py ] \
  ```
