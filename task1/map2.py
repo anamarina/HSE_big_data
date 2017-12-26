@@ -16,4 +16,4 @@ dict_val
 for line in sys.stdin:
     columns = line.split(",")   
     print(columns[0] + "\t" + columns[1] + "," + columns[10] + "," + columns[11] + ',' + dict_val[columns[0]])
-
+         #antiNucleous        #eventFile         #prodTime           #Pt                 # value of antiNucleous
