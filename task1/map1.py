@@ -6,5 +6,5 @@
 import sys
        
 for line in sys.stdin:
-    column = line.split(",")   
-    print(column[0]+"\t"+column[10])
+    columns = line.split(",")   
+    print(columns[0]+"\t"+columns[10])
