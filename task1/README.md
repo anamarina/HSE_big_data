@@ -16,27 +16,26 @@ docker cp /Users/MarinaAnanyeva/Desktop/ТМСС/bigdata/Reducer2.py dd7869fa46d
  ```
 ## 3. Create a directory in HDFS,copy files: 
 ```
-hdfs dfs -mkdir task1 
+cd $HADOOP_PREFIX
+bin/hdfs dfs -mkdir task1
 bin/hdfs dfs -put /star2002-sample.csv ./task1/
  ```
  
 ## 4. Run Hadoop-streaming:
-```
-hadoop jar hadoop-streaming.jar \
-
-- mapper map1.py 
-- reducer reduce1.py 
-- input task1 
-- output output1 
-[> file map1.py 
-file reduce1.py ]
-
-hadoop jar hadoop-streaming.jar \
-
-- mapper map2.py \
-- reducer reduce2.py \
-- input task1 \
-- output output1 \
-[> file map2.py \
-file reduce2.py ] \
+ ```
+bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-2.7.1.jar \
+    -input task1/ \
+    -output ./output \
+    -mapper map1.py \
+    -reducer reduce1.py \
+    -file /map1.py \
+    -file /reduce1.py
+ 
+ bin/hadoop jar share/hadoop/tools/lib/hadoop-streaming-2.7.1.jar \
+    -input task1/ \
+    -output ./output \
+    -mapper map2.py \
+    -reducer reduce2.py \
+    -file /map2.py \
+    -file /reduce2.py
  ```
