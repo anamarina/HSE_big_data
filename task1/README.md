@@ -1,6 +1,35 @@
 ## Docker hadoop-streming 
 ### Run commands for Map-Reduce jobs
 
+## Task 1: Hadoop Streaming
+```
+1. Для каждого значения antiNucleus вычислить среднее значение prodTime
+2. Взять строки, у которых prodTime выше среднего для соответствующего ему antiNucleus
+3. Для каждого antiNucleus посчитать:
+    1. Количество уникальных значений eventFile
+    2. Среднее значение Pt 
+```
+    
+<b>Fields:</b>
+<pre>
+0. antiNucleus INT
+1. eventFile UINT
+2. eventNumber INT
+3. eventTime DOUBLE
+4. histFile UINT
+5. multiplicity INT
+6. NaboveLb INT
+7. NbelowLb INT
+8. NLb  INT
+9. primaryTracks INT
+10. prodTime DOUBLE
+11. Pt  FLOAT
+12. runNumber INT
+13. vertexX  FLOAT
+14. vertexY  FLOAT
+15. vertexZ  FLOAT
+</pre>
+
 ## 1. Run docker:
 ```
 docker run -it sequenceiq/hadoop-docker:2.7.1 /etc/bootstrap.sh -bash
